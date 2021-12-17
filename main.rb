@@ -1,0 +1,19 @@
+require_relative 'lib/console_interface'
+require_relative 'lib/game'
+
+word = File.readlines("#{__dir__}/data/words.txt", encoding: 'UTF-8', chomp: true).sample
+
+game = Game.new(word)
+console_interface = ConsoleInterface.new(game)
+
+puts 'Доброго времени суток, на связи игра'
+
+until game.over?
+  console_interface.pint_out
+
+  letter = console_interface.get_input
+
+  game.play!(letter)
+end
+
+console_interface.pint_out

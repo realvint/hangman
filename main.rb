@@ -10,11 +10,11 @@ console_interface = ConsoleInterface.new(game)
 puts 'Доброго времени суток, на связи игра'
 
 until game.over?
-  console_interface.pint_out
+  console_interface.print_out
 
   letter = console_interface.get_input
 
   game.play!(letter)
 end
 
-console_interface.pint_out
+console_interface.print_out

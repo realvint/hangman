@@ -5,7 +5,7 @@ class ConsoleInterface
     @game = game
   end
 
-  def pint_out
+  def print_out
     puts "Слово: #{word_to_show}".colorize(:blue)
     puts figure.colorize(:yellow)
     puts "Ошибки (#{@game.errors_made}): #{errors_to_show}".colorize(:red)
